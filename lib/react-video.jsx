@@ -82,7 +82,7 @@ module.exports = React.createClass({
     if (this.state.showingVideo) {
       return (
         <div className='video-embed' style={embedVideoStyle}>
-          <iframe frameBorder='0' src={this.getIframeUrl()} allowFullScreen={true}></iframe>
+          <iframe frameBorder='0' src={this.getIframeUrl()} allowFullScreen/>
         </div>
       );
     }

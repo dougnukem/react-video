@@ -47,7 +47,8 @@
     ]
   },
   "dependencies": {
-    "react": "^0.14.3"
+    "react": "^0.14.3",
+    "react-youtube": "6.1.0"
   },
   "devDependencies": {
     "browser-sync": "^1.5.2",

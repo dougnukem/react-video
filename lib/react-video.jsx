@@ -3,6 +3,7 @@ var classSet = require('../utils/classSet');
 var ajax = require('../utils/ajax');
 var PlayButton = require('./components/play-button');
 var Spinner = require('./components/spinner');
+var YouTube = require('react-youtube');
 
 module.exports = React.createClass({
   displayName: 'Video',
@@ -80,6 +81,14 @@ module.exports = React.createClass({
     };
 
     if (this.state.showingVideo) {
+
+      if (isYoutube()) {
+        return (
+          <div className='video-embed' style={embedVideoStyle}>
+            <YouTube videoId={this.props.videoId} />
+          </div>
+        );
+      }
       return (
         <div className='video-embed' style={embedVideoStyle}>
           <iframe frameBorder='0' src={this.getIframeUrl()} allowFullScreen/>

@@ -82,7 +82,7 @@ module.exports = React.createClass({
     if (this.state.showingVideo) {
       return (
         <div className='video-embed' style={embedVideoStyle}>
-          <iframe frameBorder='0' src={this.getIframeUrl()}></iframe>
+          <iframe frameBorder='0' src={this.getIframeUrl()} allowfullscreen></iframe>
         </div>
       );
     }
@@ -102,7 +102,7 @@ module.exports = React.createClass({
   fetchYoutubeData() {
     var id = this.props.videoId;
     this.setState({
-      thumb: `http://img.youtube.com/vi/${id}/1.jpg`,
+      thumb: `//img.youtube.com/vi/${id}/1.jpg`,
       imageLoaded: true
     })
   },

@@ -146,7 +146,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (this.state.showingVideo) {
 	      return (
 	        React.createElement("div", {className: "video-embed", style: embedVideoStyle}, 
-	          React.createElement("iframe", {frameBorder: "0", src: this.getIframeUrl()})
+	          React.createElement("iframe", {frameBorder: "0", src: this.getIframeUrl(), allowfullscreen: true})
 	        )
 	      );
 	    }
@@ -166,7 +166,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  fetchYoutubeData:function() {
 	    var id = this.props.videoId;
 	    this.setState({
-	      thumb: ("http://img.youtube.com/vi/" + id + "/1.jpg"),
+	      thumb: ("//img.youtube.com/vi/" + id + "/1.jpg"),
 	      imageLoaded: true
 	    })
 	  },

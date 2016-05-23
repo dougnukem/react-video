@@ -15,7 +15,7 @@ module.exports = {
     library: GLOBAL_VAR
   },
 	externals: {
-	'react': 'React'
+		'react': 'React'
 	},
   module: {
     loaders: [
@@ -29,6 +29,10 @@ module.exports = {
 				}
       }]
   },
+	resolve: {
+		extensions: ['', '.js', '.jsx'],
+		modulesDirectories: ['src', 'node_modules'],
+	},
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {

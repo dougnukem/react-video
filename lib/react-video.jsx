@@ -84,7 +84,7 @@ module.exports = React.createClass({
 
       return (
         <div className='video-embed' style={embedVideoStyle}>
-          <ReactPlayer url={getIframeUrl} />
+          <ReactPlayer url={getIframeUrl()} />
         </div>
       );
     }

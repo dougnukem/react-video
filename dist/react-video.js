@@ -79,10 +79,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _ref = (0, _jsx3.default)(Spinner, {});
 
-	var _ref2 = (0, _jsx3.default)(ReactPlayer, {
-	  url: getIframeUrl
-	});
-
 	module.exports = React.createClass({
 	  displayName: 'Video',
 	  propTypes: {
@@ -160,7 +156,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return (0, _jsx3.default)('div', {
 	        className: 'video-embed',
 	        style: embedVideoStyle
-	      }, void 0, _ref2);
+	      }, void 0, (0, _jsx3.default)(ReactPlayer, {
+	        url: getIframeUrl()
+	      }));
 	    }
 	  },
 	  playVideo: function playVideo(ev) {

@@ -23,13 +23,32 @@ module.exports = {
     }
   },
   module: {
-    loaders: [{
-      test: /\.(js|jsx)$/,
-      loader: 'jsx-loader?harmony'
-    }, {
-      test: /\.(js|jsx)$/,
-      loader: 'jsx-loader?insertPragma=React.DOM'
-    }]
+    loaders: [
+			{
+        loader: 'babel',
+        exclude: /(node_modules|bower_components)/,
+        query: {
+          cacheDirectory: true,
+          plugins: [
+            // 'transform-runtime' should do as little as possible.
+            // https://github.com/este/este/issues/862
+            ['transform-runtime', { polyfill: false, regenerator: false }],
+            'add-module-exports',
+          ],
+          presets: ['es2015', 'react', 'stage-1'],
+          env: {
+            development: {
+              presets: ['react-hmre']
+            },
+            production: {
+              plugins: [
+                'transform-react-constant-elements',
+                'transform-react-inline-elements'
+              ]
+            }
+          }
+        }
+      }]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
